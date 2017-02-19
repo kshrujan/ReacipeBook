@@ -1,0 +1,98 @@
+/*Nav Styles*/
+h1.logo {
+  margin: 0;
+}
+
+span.right{
+  float: right;
+}
+
+nav{
+  padding-bottom: 30px;
+}
+
+.nav ul {
+  overflow: hidden;
+  *zoom: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #0e2f44;
+  font-family: 'Raleway', sans-serif;
+}
+
+.nav ul: before, .nav ul: after{
+  content: "";
+  display: table;
+}
+
+.nav ul:after{
+  clear: both;
+}
+
+.nav ul>li{
+  float: left;
+  position: relative;
+}
+
+.nav a{
+  display: block;
+  padding: 10px 20px;
+  line-height: 1.2em;
+  color: #fff;
+  line-height: 2.75em;
+  text-decoration: none;
+  margin-bottom: 0;
+}
+
+.show{
+  display: block;
+}
+
+.nav a:hover{
+  text-decoration: none;
+  background: #174c6e;
+}
+
+.activeLink{
+  text-decoration: none;
+  background-color: #174c6e;
+}
+
+.nav li ul {
+    background:#273754;
+}
+.nav li ul li {
+    width:200px;
+}
+.nav li ul a {
+    border:none;
+}
+
+.userDropdown{
+    border-radius: 3px;
+    text-align: left;
+    display: none;
+    position: absolute;
+    background-color:#fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 1;
+    right: 0;
+}
+
+.userDropdown a {
+  color: #000;
+}
+
+.userDropdown a:hover {
+   background:rgba(0,0,0,0.05);
+}
+
+.fa.fa-user-cirle-o.fa-2x {
+  line-height: 2.75em;
+}
+
+.caret{
+  height: 10px;
+}

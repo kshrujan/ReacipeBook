@@ -1,0 +1,16 @@
+<div class="wow slideInUp">
+  <a [routerLink]="[recipeId]"  class="list-group-item clearfix spaced" routerLinkActive="activeRecipe">
+
+    <div class="row">
+      <div class="container centered">
+        <img class="" src="{{recipe.imagePath}}" style="max-height: 100px;">
+      </div>
+    </div>
+
+    <div class="pull-left">
+        <h4 class="list-group-headeing">{{recipe.name}}</h4>
+        <p class="list-group-content">{{recipe.description | substring}}</p>
+    </div>
+
+  </a>
+</div>

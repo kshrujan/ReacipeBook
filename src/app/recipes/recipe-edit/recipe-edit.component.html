@@ -1,0 +1,103 @@
+<div class="wow fadeIn">
+  <div class="row">
+    <div class="col-xs-12">
+      <form [formGroup]="recipeForm" (ngSubmit)="recipeFormSubmit()">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="name">Title</label>
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                formControlName="name">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="image-url">Image Url</label>
+              <input
+                type="text"
+                id="image-url"
+                class="form-control"
+                formControlName="imagePath"
+                #imageURL>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="!imageURL.value == ''">
+          <div class="col-xs-12">
+            <div class="img-responsive imageThumbnail">
+              <img [src]="imageURL.value" id="viewEditImage">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="content">Content</label>
+              <textarea
+                type="text"
+                id="content"
+                rows="6"
+                class="form-control"
+                formControlName="description"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="list-group" formArrayName="ingredients">
+              <div class="row" *ngFor="let ingredient of recipeForm.controls['ingredients'].controls; let i=index">
+                <div formGroupName="{{i}}">
+                  <div class="col-sm-5">
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="name">
+                  </div>
+                  <div class="col-sm-5">
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="amount">
+                  </div>
+                  <div class="col-sm-2">
+                    <!-- 'i' comes from the ngFor loop in the div enclosing this element -->
+                    <button class="btn-deleteX" (click)="removeIngredient(i)"><i class="fa fa-times" aria-hidden="true"></i></button>
+                  </div>
+                </div>
+
+                <br><br>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button type="submit" class="btn" [disabled]="!recipeForm.valid">Save</button>
+            <a class="btn-delete" (click)="navigateBack()">Cancel</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <label for="ingredient">Add Ingredients</label>
+      <div class="form-group row">
+        <div class="col-md-5"><input id="ingredient" type="text" class="form-control" #ingredientName></div>
+        <div class="col-md-5"><input type="text" class="form-control" #ingredientAmount></div>
+        <div class="col-md-2">
+          <button
+            type="button"
+            class="btn-add" (click)="addIngredient(ingredientName.value, ingredientAmount.value)"><i class="fa fa-plus" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

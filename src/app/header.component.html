@@ -1,0 +1,19 @@
+<nav class="nav">
+    <ul>
+        <li><a [routerLink]="['/']"><h4><i class="fa fa-book" aria-hidden="true"></i> Recipe Book</h4></a></li>
+        <li routerLinkActive="activeLink"><a [routerLink]="['/recipes']">Recipes</a></li>
+        <li routerLinkActive="activeLink"><a [routerLink]="['/shopping-list']">Shopping List</a></li>
+
+        <span class="right">
+          <li>
+            <a id="user" (click)="isOpen()"><i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i> <span class="caret"></span></a>
+            <div (mouseleave)="isClosed()" id="uDrop" class="userDropdown">
+              <a href="#">Login</a>
+              <a href="#">Sign Up</a>
+              <hr>
+              <a href="#">Logout</a>
+            </div>
+          </li>
+      </span>
+    </ul>
+</nav>

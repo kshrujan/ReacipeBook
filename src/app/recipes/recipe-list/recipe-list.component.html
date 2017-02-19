@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xs-12">
+    <a class="btn" [routerLink]="['new']">New Recipe</a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <!-- In the ngFor, the currentRecipe is a local var that can be used to be the value to bound vars. i.e. [recipe] -->
+      <rb-recipe-item *ngFor="let currentRecipe of recipes; let i = index" [recipe] = "currentRecipe" [recipeId]="i"></rb-recipe-item>
+    </ul>
+  </div>
+</div>

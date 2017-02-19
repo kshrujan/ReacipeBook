@@ -1,0 +1,41 @@
+<div class="wow slideInRight">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="imageThumbnail">
+        <img id="recipeImage" src="{{detailsForSelectedRecipe?.imagePath}}" alt="" class="img-responsive">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>{{detailsForSelectedRecipe?.name}}</h1>
+    </div>
+    <div class="col-xs-12 btns-centered">
+      <button class="btn-shopping" (click)="onAddToShoppingList()">Add to Shopping List <i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+      <button class="btn-edit" (click)="editRecipe()">Edit <i class="fa fa-cog" aria-hidden="true"></i></button>
+      <button class="btn-delete" (click)="deleteRecipe()">Delete <i class="fa fa-ban" aria-hidden="true"></i></button>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <p>{{detailsForSelectedRecipe?.description}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <span class="bold">Ingredients</span>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let ingredient of detailsForSelectedRecipe?.ingredients">{{ingredient.name}} - ({{ingredient.amount}})</li>
+      </ul>
+    </div>
+  </div>
+</div>
